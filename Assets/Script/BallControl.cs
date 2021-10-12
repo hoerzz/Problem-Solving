@@ -8,6 +8,7 @@ public class BallControl : MonoBehaviour
     public float xForce;
     public float yForce;
     public float BallSpeed;
+    Vector3 lastVelocity;
 
     void Start()
     {
@@ -16,6 +17,7 @@ public class BallControl : MonoBehaviour
     void Update()
     {
         PushBall();
+        lastVelocity = rigidbody2D.velocity;
     }
     //Bola bergerak random dengan kecepatan konstan
     void PushBall()
@@ -29,5 +31,12 @@ public class BallControl : MonoBehaviour
         {
             rigidbody2D.AddForce(new Vector2(xForce, yForce).normalized * BallSpeed);
         }
+    }
+    //Untuk Memantulkan bola
+    private void OnCollisionEnter2D(Collision2D other) {
+        var speed = lastVelocity.magnitude;
+        var dir = Vector2.Reflect(lastVelocity.normalized, other.contacts[0].normal);
+
+        rigidbody2D.velocity = dir * Mathf.Max(speed, BallSpeed);
     }
 }
