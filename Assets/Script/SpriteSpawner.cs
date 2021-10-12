@@ -17,8 +17,8 @@ public class SpriteSpawner : MonoBehaviour
         int numberToSpawn = Random.Range(5, 10);
         for (int i = 0; i < numberToSpawn; i++)
         {
-            float randomX = Random.Range(-7, 7);
-            float randomY = Random.Range(-3, 3);
+            float randomX = Random.Range(-6, 6);
+            float randomY = Random.Range(-4, 4);
             Instantiate(kotak, new Vector2(randomX, randomY), Quaternion.identity);
         }
 
