@@ -404,7 +404,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 866669407}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 996d161f2a2a6b84ead26a346b440f3b, type: 3}
+  m_Script: {fileID: 11500000, guid: 8431ebe9bee0f35448211b3b4eec052b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   kotak: {fileID: 11137556408897879, guid: bd3b71f49d8886848a5792771f098dbb, type: 3}
@@ -534,6 +534,7 @@ GameObject:
   - component: {fileID: 1390632109}
   - component: {fileID: 1390632110}
   - component: {fileID: 1390632108}
+  - component: {fileID: 1390632111}
   m_Layer: 0
   m_Name: Bola
   m_TagString: Player
@@ -612,7 +613,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1390632105}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b2f4d5300611f34fb43901b9fcff6bc, type: 3}
+  m_Script: {fileID: 11500000, guid: a3811ece55cc66e47b1f5f25c0f3e934, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 0.1
@@ -654,6 +655,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.1
+--- !u!114 &1390632111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390632105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b92e8f16a056794ba1d30138c1c5ebd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1427309457
 GameObject:
   m_ObjectHideFlags: 0
