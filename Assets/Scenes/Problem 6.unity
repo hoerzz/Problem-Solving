@@ -363,11 +363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 996d161f2a2a6b84ead26a346b440f3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 11137556408897879, guid: bd3b71f49d8886848a5792771f098dbb, type: 3}
-  xMin: -7
-  xMax: 7
-  yMin: -3
-  yMax: 3
+  kotak: {fileID: 11137556408897879, guid: bd3b71f49d8886848a5792771f098dbb, type: 3}
 --- !u!4 &866669409
 Transform:
   m_ObjectHideFlags: 0
