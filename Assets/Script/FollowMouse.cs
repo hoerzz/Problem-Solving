@@ -6,7 +6,7 @@ public class FollowMouse : MonoBehaviour
 {
     private Vector3 mousePosition;
     public float moveSpeed = 0.1f;
-    
+    public ScoreManager score;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,5 +19,15 @@ public class FollowMouse : MonoBehaviour
         mousePosition = Input.mousePosition;
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
         transform.position = Vector2.Lerp(transform.position, mousePosition, moveSpeed);
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "Obstacle")
+        {
+            transform.localScale += new Vector3(0.5f,0.5f,0.5f);
+            score.scoreadd();
+            Destroy(col.gameObject);
+        }
     }
 }
