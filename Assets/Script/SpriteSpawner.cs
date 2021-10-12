@@ -9,6 +9,7 @@ public class SpriteSpawner : MonoBehaviour
     void Start()
     {
         Spawn();
+        StartCoroutine(SpawnSprite());
     }
     //spawn objek random
     void Spawn()
@@ -20,5 +21,19 @@ public class SpriteSpawner : MonoBehaviour
             float randomY = Random.Range(-4, 4);
             Instantiate(kotak, new Vector2(randomX, randomY), Quaternion.identity);
         }
+    }
+    //sprite muncul ketika 3 detik
+    public IEnumerator SpawnSprite()
+    {
+        if (transform.childCount < 10)
+        {
+            float randomX = Random.Range(-6, 6);
+            float randomY = Random.Range(-4, 4);
+
+            Instantiate(kotak, new Vector2(randomX, randomY), Quaternion.identity); 
+            
+        }
+        yield return new WaitForSeconds(3);
+        StartCoroutine(SpawnSprite()); 
     }
 }
