@@ -25,7 +25,6 @@ public class FollowMouse : MonoBehaviour
     {
         if (col.gameObject.tag == "Obstacle")
         {
-            transform.localScale += new Vector3(0.5f,0.5f,0.5f);
             score.scoreadd();
             Destroy(col.gameObject);
         }
