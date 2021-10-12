@@ -5,13 +5,12 @@ using UnityEngine;
 public class SpriteSpawner : MonoBehaviour
 {
     public GameObject kotak;
-   
     // Start is called before the first frame update
     void Start()
     {
         Spawn();
+        StartCoroutine(SpawnSprite());
     }
-
     void Spawn()
     {
         int numberToSpawn = Random.Range(5, 10);
@@ -22,5 +21,19 @@ public class SpriteSpawner : MonoBehaviour
             Instantiate(kotak, new Vector2(randomX, randomY), Quaternion.identity);
         }
 
+    }
+    //sprite muncul ketika 3 detik
+    public IEnumerator SpawnSprite()
+    {
+        if (transform.childCount < 10)
+        {
+            float randomX = Random.Range(-6, 6);
+            float randomY = Random.Range(-4, 4);
+
+            Instantiate(kotak, new Vector2(randomX, randomY), Quaternion.identity); 
+            
+        }
+        yield return new WaitForSeconds(3);
+        StartCoroutine(SpawnSprite()); 
     }
 }
